@@ -1,0 +1,10 @@
+.dashboard{
+    min-height: 100vh;
+    background-color: #f7f8fa;
+ position: relative;
+}
+.page{
+    display: flex;
+ margin-top: 80px;
+ gap: 1px;
+}

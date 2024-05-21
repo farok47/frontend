@@ -1,0 +1,17 @@
+.btn{
+    padding:10px 30px!important;
+    border-radius: 6px!important;
+    background-color: rgb(1, 1, 190)!important;
+    color:white!important ;
+    cursor: pointer !important;
+}
+.btn:hover {
+    background-color: rgb(49, 49, 238) !important;
+    color:white !important;
+
+}
+.btn:active{
+    background-color: rgb(2, 2, 110)!important;
+    color:white !important;
+
+}

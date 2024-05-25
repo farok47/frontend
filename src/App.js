@@ -7,6 +7,7 @@ import Users from "./pages/dashboard/Users";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Requireauth from "./pages/auth/Requireauth";
 import User from "./pages/dashboard/User";
+import NewProduct from "./pages/website/NewProduct";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/Register" element={<Register />}></Route>
         <Route element={<Requireauth />}>
           <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="newproduct" element={<NewProduct />} />
+          
             <Route path="users" element={<Users />} />
             <Route path="users/:id" element={<User />} />
           </Route>

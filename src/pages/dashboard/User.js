@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { Axios } from "../../api/Axios";
 
 function User() {
+  const param=useParams()
+  console.log(param)
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [disable,setdisable]=useState(true)

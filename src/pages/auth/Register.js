@@ -28,8 +28,9 @@ function Register() {
       const res=await axios.post(`http://localhost:5000/api/auth/register`,{ username,email,password})
       navigate("/dashboard/users")
     } catch (error) {
-      if (error.response.status=422)
-      seterr("the email already taken")
+      if (error.response.status==400)
+      {console.log(error.response)
+      seterr("the email already taken")}
       else
       seterr("enternal error")
 

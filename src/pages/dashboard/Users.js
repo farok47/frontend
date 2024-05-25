@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { Axios } from "../../api/Axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -11,6 +10,8 @@ function Users() {
   const [delet, setdelet] = useState(false);
 
   useEffect(() => {
+            console.log(users)
+
     axios.get(`/api/users`)
       .then((data) => setusers(data.data))
       .catch((err) => console.log(err));
@@ -22,9 +23,11 @@ function Users() {
       <td>{user.email}</td>
       <td>
         <div className="d-flex gap-3 justify-content-center align-items-center ">
-          <Link to={`${user.id}`}>
+          
+          <Link to={`${users.id}`}>
             <FontAwesomeIcon icon={faPenToSquare} />
           </Link>
+          
           <FontAwesomeIcon
             onClick={() => handeldelete(user.id)}
             style={{ color: "red", cursor: "pointer" }}
@@ -36,7 +39,7 @@ function Users() {
   ));
   async function handeldelete(id) {
     try {
-      const res = await Axios.delete(`user/${id}`);
+      const res = await axios.delete(`user/${id}`);
       setdelet((prev) => !prev);
     } catch (error) {}
   }

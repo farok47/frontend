@@ -27,6 +27,13 @@ function Sidebar() {
         <FontAwesomeIcon icon={faUsers} />
         <p style={{ display: isopen ? "block" : "none" }}>users</p>
       </NavLink>
+      <NavLink
+        to={"newproduct"}
+        className="side-bar-link"
+        style={{ height: isopen ? "50px" : "50px" }}
+      >
+        <p style={{ display: isopen ? "block" : "none" }}>product</p>
+      </NavLink>
     </div>
   );
 }
